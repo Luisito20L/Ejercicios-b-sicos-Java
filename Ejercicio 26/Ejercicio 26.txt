@@ -1,0 +1,63 @@
+import javax.swing.JOptionPane;
+ 
+ 
+public class main {
+ 
+        public static void main(String[] args) {
+                // TODO Auto-generated method stub
+               
+			//Programa que pregunte que hacer, introducir o enseñar productos.
+			//Si introduces puedes meter num indeterminado de productos hasta poner "Stop" 
+			//Los productos tienen un precio, al meter un producto se mete tb un precio
+			//Si enseñas se enseña ordenados alfabeticamente, con nombre + precio
+			//Despues de introducir o enseñar se vuelve a preguntar q quieres hacer
+			//Se finaliza el programa tras escribir "detener"
+				   
+			String introducir = "";
+			String listar = "";            
+			String[] productos = new String[20];
+			String[] precios = new String[20];
+			int i = 0;
+			String introducirProducto = "";
+			String abecedario = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			String[] productosOrdenados = new String[20];
+			String[] preciosOrdenados = new String[20];
+			int z = 0;
+		   
+			while(!introducir.equals("detener")){
+					introducir = JOptionPane.showInputDialog("¿Que desea, introducir o listar productos?");
+					
+					if(introducir.equals("introducir")){
+							while(!introducirProducto.equals("stop")){
+									introducirProducto = JOptionPane.showInputDialog("Introduce producto");
+									if(!introducirProducto.equals("stop")){
+											productos[i] = introducirProducto;
+											precios[i] = JOptionPane.showInputDialog("Introduce precio");
+											i++;
+									}
+							}                      
+					}
+					
+					if(introducir.equals("listar")){
+							if(i>0){
+									for(int x=0;x<=24;x++){
+											for(int y=0;y<i;y++){
+													if(abecedario.charAt(x)==productos[y].charAt(0)){
+															productosOrdenados[z] =  productos[y];
+															preciosOrdenados[z] = precios[y];
+															z++;
+															System.out.println("Producto encontrado");
+													}
+												   
+											}
+									}
+									for(int j=0;j<i;j++){
+											System.out.println(productosOrdenados[j] +": " + preciosOrdenados[j]);
+									}
+							} else {
+									System.out.println("No hay productos");
+							}
+					}       
+			}
+    }
+}
