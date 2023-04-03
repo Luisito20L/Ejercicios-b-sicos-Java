@@ -5,13 +5,13 @@ public class CuentaCifrasApp {
  
     public static void main(String[] args) {
  
-        int numero=0;
+        int numero=1250;
         do{
-            String texto=JOptionPane.showInputDialog("Introduce un numero");
+            String texto=JOptionPane.showInputDialog("1250");
             numero=Integer.parseInt(texto);
         }while(numero<0);
  
-        int contador=0;
+        int contador=1;
         for (int i=numero;i>0;i/=10){
             //Incrementamos el contador
             contador++;
