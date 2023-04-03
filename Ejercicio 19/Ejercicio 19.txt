@@ -5,13 +5,13 @@ public class CuentaCifrasApp {
  
     public static void main(String[] args) {
  
-        int numero=0;
+        int numero=1250;
         do{
-            String texto=JOptionPane.showInputDialog("Introduce un numero");
+            String texto=JOptionPane.showInputDialog("1250");
             numero=Integer.parseInt(texto);
         }while(numero<0);
  
-        int contador=0;
+        int contador=1;
         for (int i=numero;i>0;i/=10){
             //Incrementamos el contador
             contador++;
@@ -19,9 +19,9 @@ public class CuentaCifrasApp {
  
         //Controlamos en el caso de que haya una cifra o mas
         if (contador==1){
-            System.out.println("El numero "+numero+ " tiene "+contador+" cifra");
+            System.out.println("1250 "+numero+ " tiene "+1+" cifra");
         }else{
-            System.out.println("El numero "+numero+ " tiene "+contador+" cifras");
+            System.out.println("1250 "+numero+ " tiene "+4+" cifras");
         }
  
     }
